@@ -1,0 +1,250 @@
+
+body{
+  margin: 0;
+  padding-top: 70px;
+  padding-right: 20px;
+  background-color: rgb(250, 250, 250);
+
+}
+/* //////HEADER/////// */
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  border-bottom: 2px solid rgb(240, 240, 240);
+  z-index: 100;
+}
+.left-section{
+  display: flex;
+  align-items: center;
+  
+}
+.hamburger-icon{
+  height: 30px;
+  margin-left: 30px;
+}
+.youtube-icon{
+  height: 25px;
+  margin-left: 50px;
+}
+.middle-section{
+  flex: 1;
+  max-width: 550px;
+  margin-left: 70px;
+  margin-right: 35px;
+  display: flex;
+  align-items: center;
+}
+.search-bar{
+  flex: 1;
+  margin-left: 21px;
+  height: 40px;
+  border: 1px solid rgb(218, 216, 216);
+  box-shadow: inset 1px 2px 3px rgb(245, 245, 245);
+  width: 0;
+}
+.search-bar::placeholder{
+  font-size: 16px;
+}
+.search-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 40px;
+  width: 65px;
+  margin-right: 10px;
+  margin-left: -2px;
+  border: 1px solid rgb(218, 216, 216);
+}
+.create-tip,
+.youtube-app-tip,
+.notifications-tip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.search-button  .tooltip,
+.voice-search-button .tooltip,
+.create-tip .tooltip,
+.youtube-app-tip .tooltip,
+.notifications-tip .tooltip {
+  position: absolute;
+  background-color: rgb(167, 168, 168);
+  color: #fff;
+  padding: 4px 8px;
+  bottom: -30px;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.15;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.create-tip:hover .tooltip,
+.youtube-app-tip:hover .tooltip,
+.notifications-tip:hover .tooltip{
+  opacity: 1;
+}
+.search-icon{
+  height: 26px;
+}
+.voice-search-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 42px;
+  width: 42px;
+  border-radius: 21px;
+  border: none;
+  background-color: rgb(248, 249, 249);
+}
+.voice-search-icon{
+  height: 24px;
+}
+.right-section{
+  display: flex;
+  align-items: center;
+  width: 250px;
+  justify-content: space-around;
+  flex-shrink: 0;
+}
+.upload-icon{
+  height: 30px;
+}
+.youtube-app-icon{
+  height: 30px;
+}
+.notification-icon{
+  height: 30px;
+}
+.notification{
+  position: relative;
+}
+.notification-number{
+  position:absolute;
+  top: -3px;
+  right: -3px;
+  background-color: red;
+  color: white;
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  text-align: center;
+  font-size: small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.profile-icon{
+  height: 36px;
+  border-radius: 18px;
+}
+
+/* SIDE BAR */
+.side-bar{
+  position: fixed;
+  left: 0;
+  top:60px;
+  bottom: 0;
+  width: 85px;
+  z-index: 200;
+  background-color: white;
+  padding-top: 5px;
+  margin-left: 5px;
+}
+.side-bar-link{
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  width: 80px;
+  margin-bottom: 12px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.side-bar-link:hover{
+  background-color: rgb(221, 220, 220);
+}
+.side-bar img{
+  height: 26px;
+  margin-bottom: 6px;
+}
+.side-bar div{
+  font-size: 12px;
+}
+
+/*  MAIN CONTENT  */ 
+.video-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 40px;
+  margin-left: 105px;
+  margin-top: 20px;
+}
+@media (max-width:750px){
+  .video-grid{
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+@media (min-width:751px)and (max-width:999px){
+  .video-grid{
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
+}
+@media (min-width:1000px){
+  .video-grid{
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+  }
+}
+.thumbnail{
+  position: relative;
+}
+.thumbnail img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+.channel-info{
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+.channel-profile img{
+  width: 40px;
+  border-radius: 50px;
+}
+.video-info{
+  margin-left:10px ;
+}
+.vidoe-title{
+  margin: 0;
+  font-weight: 549;
+}
+.video-auto,
+.video-stats{
+  margin-top: 14px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+}
+.video-time{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+  background-color: black;
+  padding: 4px;
+  border-radius: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
